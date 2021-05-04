@@ -7,7 +7,7 @@ body {
     background-color: black;
 }
 
-#game {
+#board {
     display: block;
     width: 100vw;
     height: 100vh;
@@ -56,8 +56,8 @@ body {
 }
 
 /* X */
-#game.x .cell:not(.selected):hover::before,
-#game.x .cell:not(.selected):hover::after,
+#board.x .cell:not(.selected):hover::before,
+#board.x .cell:not(.selected):hover::after,
 .cell.x::before,
 .cell.x::after {
     content: '';
@@ -71,24 +71,24 @@ body {
     background-color: lightgreen;
 }
 
-#game.x .cell:not(.selected):hover::before,
+#board.x .cell:not(.selected):hover::before,
 .cell.x::before {
     transform: rotate(45deg);
 }
 
-#game.x .cell:not(.selected):hover::after,
+#board.x .cell:not(.selected):hover::after,
 .cell.x::after {
     transform: rotate(-45deg);
 }
 
-#game.x .cell:not(.selected):hover::before,
-#game.x .cell:not(.selected):hover::after {
+#board.x .cell:not(.selected):hover::before,
+#board.x .cell:not(.selected):hover::after {
     background-color: gray;
 }
 
 /* CIRCLE */
-#game.circle .cell:not(.selected):hover::before,
-#game.circle .cell:not(.selected):hover::after,
+#board.circle .cell:not(.selected):hover::before,
+#board.circle .cell:not(.selected):hover::after,
 .cell.circle::before,
 .cell.circle::after {
     content: '';
@@ -103,7 +103,7 @@ body {
     border: 15px solid lightskyblue;
 }
 
-#game.circle .cell:not(.selected):hover::before,
-#game.circle .cell:not(.selected):hover::after {
+#board.circle .cell:not(.selected):hover::before,
+#board.circle .cell:not(.selected):hover::after {
     border: 15px solid gray;
 }
