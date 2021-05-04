@@ -11,11 +11,9 @@ const WIN_COMBINATIONS = new Set([
 ])
 const remainingCells = new Set(['0', '1', '2', '3', '4', '5', '6', '7', '8'])
 const startingPlayer = Math.random() < 0.5 ? 'x' : 'circle'
-const xPlayer = []
-const circlePlayer = []
 const players = new Map([
-    ['x', xPlayer],
-    ['circle', circlePlayer],
+    ['x', []],
+    ['circle', []],
 ])
 let count = 0
 let activePlayer = startingPlayer
@@ -25,6 +23,7 @@ let winner = undefined
 function init() {
     buildGrid()
     board.classList.add(startingPlayer)
+    document.querySelector('#newGame').addEventListener('click', () => window.location = '')
 }
 
 function buildGrid() {
@@ -61,12 +60,13 @@ function checkGameState() {
         })
     })
     if (!!winner) {
-        alert(`Player ${winner} wins!`)
-        window.location = '/'
+        document.querySelector('.modal-container').style.display = 'flex'
+        document.querySelector('#modalMessage').innerHTML = `Player ${winner} wins!`
+        return;
     }
     if (!winner && remainingCells.size === 0) {
-        alert(`Draw!`)
-        window.location = '/'
+        document.querySelector('.modal-container').style.display = 'flex'
+        document.querySelector('#modalMessage').innerHTML = `It's a draw!`
     }
 }
 

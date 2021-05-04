@@ -1,21 +1,24 @@
+:root {
+    --obsidian: #111;
+    --white: white;
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: black;
+    background-color: var(--obsidian);
 }
 
 #board {
-    display: block;
     width: 100vw;
     height: 100vh;
     display: grid;
     align-content: center;
-    align-items: center;
     justify-content: center;
-    justify-items: center;
     grid-template-columns: repeat(3, auto);
 }
 
@@ -23,7 +26,7 @@ body {
     display: inline-block;
     width: 100px;
     height: 100px;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,4 +109,44 @@ body {
 #board.circle .cell:not(.selected):hover::before,
 #board.circle .cell:not(.selected):hover::after {
     border: 15px solid gray;
+}
+
+/* MODAL */
+.modal-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--white);
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#newGame {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--obsidian);
+    border: 1px solid var(--white);
+    color: var(--white);
+    font-size: 18px;
+}
+
+#newGame:hover {
+    background-color: var(--white);
+    border: 1px solid var(--obsidian);
+    color: var(--obsidian);
 }
