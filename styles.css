@@ -71,7 +71,8 @@ body {
 
 .cell.x.selected::before,
 .cell.x.selected::after {
-    background-color: lightgreen;
+    background-color: greenyellow;
+    box-shadow: 0px 0px 20px greenyellow;
 }
 
 #board.x .cell:not(.selected):hover::before,
@@ -103,7 +104,8 @@ body {
 
 .cell.circle.selected::before,
 .cell.circle.selected::after {
-    border: 15px solid lightskyblue;
+    border: 15px solid #02E9F3;
+    box-shadow: 0px 0px 15px #02E9F3, #02E9F3 0px 0px 15px inset;
 }
 
 #board.circle .cell:not(.selected):hover::before,
